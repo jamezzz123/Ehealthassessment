@@ -1,8 +1,9 @@
 CACHE MANIFEST
-
 https://www.whatshouldicallit.netlify.com/index.html
 https://code.highcharts.com/highcharts.js
 https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js
 https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js
 https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js
 https://cdn.jsdelivr.net/npm/vue/dist/vue.js
+/src/main.js
+app.cache
