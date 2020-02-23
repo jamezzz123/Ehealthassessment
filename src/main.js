@@ -44,11 +44,11 @@ var app = new Vue({
                 },
                 yAxis: {
                     title: {
-                        text: 'Fruit eaten'
+                        text: 'Number Of Persons'
                     }
                 },
                 series: [{
-                    name: 'number of person',
+                    name: 'number of person per bloodGroup',
                     data: [...this.dataSetNp]
                 }, {
                     name: '10 - 20(age)',
@@ -120,12 +120,31 @@ var app = new Vue({
                 this.charts();
             }
 
-        }
+        },
+        loop(){     
+
+            //function to gernerate 100 sample data
+
+            for (let index = 0; index <= 100; index++) {
+                
+               let  nameArray = ['John','Jane','Jack','Kelvin','Anthony','Favour','James','Daniel','slivia','sarah','peter','paul','emma','josephine','praise','joshue','simon','king'];
+                
+               let dataAge = Math.floor(Math.random() * Math.floor(30));   
+               let dataName =  nameArray[Math.floor(Math.random() * nameArray.length)]
+                let dataBloodGroup =  this.bloodGroups[Math.floor(Math.random() * this.bloodGroups.length)]
+
+                db.collection('persons').add({
+                    name: dataName,
+                    age: dataAge,
+                    bloodGroup:dataBloodGroup                })
+            }
+        }       
+
 
     },
 
     created() {
         this.getData();
-        
+    //    this.loop(); 
     },
 });
