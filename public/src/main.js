@@ -99,13 +99,13 @@ var app = new Vue({
             db.collection("persons").get()
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
-                        // doc.data() is never undefined for query doc snapshots
-                       
+     
                         this.data.push(doc.data());
 
                     });
                 })
                 .then(() => {
+                    // storing data using local = storage
                     localStorage.setItem("data", JSON.stringify(this.data));
                     this.dataSeter();
                     this.charts()
@@ -115,6 +115,7 @@ var app = new Vue({
 
 
             if (!window.navigator.onLine) {
+                // accessing data when no internet
                 this.data = JSON.parse(window.localStorage.data);
                 this.dataSeter();
                 this.charts();
