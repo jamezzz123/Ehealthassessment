@@ -5,5 +5,5 @@ please Note
 - i not quite clear what question 2 says
 - lastly i hope my code is acceptable to you all
 
-## demo like
+## demo link
 https://whatshouldicallit.netlify.com/
